@@ -19,7 +19,7 @@ client.on('message', message => {
      let commandFile = require(`./commands/${cmd}.js`);
      commandFile.run(client, message, args);
   
-  } cache (e) {
+  } catch (e) {
     console.log(e.stack);
   }
 });
