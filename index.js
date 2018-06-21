@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const prefix = "_";
-const ownerID = "your Id here";
+const prefix = '_';
+const ownerID = '356510829920780289';
 
 client.on('message', message => {
 
@@ -10,7 +10,7 @@ client.on('message', message => {
   let cmd = args.shift().toLowerCase();
  
   if (message.author.bot) return;
-  if (!message.content.startsWith(prefix) return;
+  if (!message.content.startsWith(prefix)) return;
   
   try {
   
