@@ -14,9 +14,9 @@ client.on('message', message => {
   
   try {
   
-     delete require.cache[require.resolve(`../commands/${cmd}.js`)];          
+     delete require.cache[require.resolve(`./commands/${cmd}.js`)];          
   
-     let commandFile = require(`../commands/${cmd}.js`);
+     let commandFile = require(`./commands/${cmd}.js`);
      commandFile.run(client, message, args, Discord);
   
   } catch (e) {
