@@ -16,8 +16,11 @@ client.on('message', message => {
   
      delete require.cache[require.resolve(`./commands/${cmd}.js`)];          
   
+     let ops = {
+         ownerID: ownerID
+     }
      let commandFile = require(`./commands/${cmd}.js`);
-     commandFile.run(client, message, args, Discord);
+     commandFile.run(client, message, args, ops);
   
   } catch (e) {
     console.log(e.stack);
