@@ -6,7 +6,7 @@ const ownerID = '356510829920780289';
 
 client.on('message', message => {
 
-  let args = message.content.slice(prefix.length).trim().split(/ +g/);
+  let args = message.content.slice(prefix.length).trim().split(" ");
   let cmd = args.shift().toLowerCase();
  
   if (message.author.bot) return;
@@ -14,10 +14,10 @@ client.on('message', message => {
   
   try {
   
-     delete require.cache[require.resolve(`./commands/${cmd}.js`)];          
+     delete require.cache[require.resolve(`../commands/${cmd}.js`)];          
   
-     let commandFile = require(`./commands/${cmd}.js`);
-     commandFile.run(client, message, args);
+     let commandFile = require(`../commands/${cmd}.js`);
+     commandFile.run(client, message, args, Discord);
   
   } catch (e) {
     console.log(e.stack);
