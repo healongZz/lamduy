@@ -24,6 +24,8 @@ client.on('message', message => {
   }
 });
 
-client.on('ready', () => console.log('Bot Has Online Now'));
+client.on('ready', () => {
+  console.log('Bot online'));
+});
 
 client.login(process.env.TOKEN);
