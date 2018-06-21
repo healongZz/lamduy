@@ -6,7 +6,7 @@ const ownerID = '356510829920780289';
 
 client.on('message', message => {
 
-  let args = message.content.slice(prefix.length).trim().split(' ');
+  let args = message.content.slice(prefix.length).trim().split(/ +g/);
   let cmd = args.shift().toLowerCase();
  
   if (message.author.bot) return;
