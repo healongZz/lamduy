@@ -1,4 +1,4 @@
-exports.run = (client, message, args) = {
+exports.run = (client, message, args) => {
 
 let invites = await message.guild.fetchInvites().catch(error => {
         return message.channel.send('Sorry, I don\'t have the proper permissions to view invites!');
