@@ -15,11 +15,15 @@ client.on('message', message => {
   
   try {
   
-    // delete require.cache[require.resolve(`./commands/${cmd}.js`)];          
+     delete require.cache[require.resolve(`./commands/${cmd}.js`)];          
   
      let ops = {
          ownerID: ownerID
      }
+     let message = {
+         message: message.delete();
+       }
+     
      let commandFile = require(`./commands/${cmd}.js`);
      commandFile.run(client, message, args, ops);
   
