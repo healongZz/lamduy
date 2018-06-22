@@ -6,6 +6,7 @@ const ownerID = '356510829920780289';
 
 client.on('message', message => {
 
+  if(message.author.bot) return;
   let args = message.content.slice(prefix.length).trim().split(" ");
   let cmd = args.shift().toLowerCase();
  
@@ -14,7 +15,7 @@ client.on('message', message => {
   
   try {
   
-     delete require.cache[require.resolve(`./commands/${cmd}.js`)];          
+    // delete require.cache[require.resolve(`./commands/${cmd}.js`)];          
   
      let ops = {
          ownerID: ownerID
