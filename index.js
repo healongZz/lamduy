@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const send = require("quick.hook");
 
 const prefix = '_';
 const ownerID = '356510829920780289';
@@ -20,9 +21,6 @@ client.on('message', message => {
      let ops = {
          ownerID: ownerID
      }
-     let message = {
-         message: message.delete();
-       }
      
      let commandFile = require(`./commands/${cmd}.js`);
      commandFile.run(client, message, args, ops);
