@@ -1,6 +1,6 @@
 const send = require("quick.hook");
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, send) => {
 
 //let emoji = args[0];
 send(message.chhanel, args, {
