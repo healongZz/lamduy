@@ -21,9 +21,12 @@ client.on('message', message => {
      let ops = {
          ownerID: ownerID
      }
+     let send = {
+       send: send
+       }
      
      let commandFile = require(`./commands/${cmd}.js`);
-     commandFile.run(client, message, args, ops);
+     commandFile.run(client, message, args, ops, send);
   
   } catch (e) {
     console.log(e.stack);
